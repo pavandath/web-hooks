@@ -6,7 +6,7 @@ pipeline{
             
             steps{
                 echo "**********RUNNING CODEQUALITY TEST***********"
-                echo "**********RUNNING CODEQUALITY TEST***********"
+                echo "**********RUNNING CBuild***********"
                 }
             }
         }

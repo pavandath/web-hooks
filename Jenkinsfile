@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools{
+        jdk 'jdk-17'
+    }
     stages{
         stage ('BUILD'){
             steps{
@@ -8,7 +11,7 @@ pipeline{
                 sh 'git clone https://github.com/pavandath/spring-petclinic.git'
                 dir ('spring-petclinic'){
                 sh 'mvn clean package -DskipTests -Dcyclonedx.skip=true'
-                
+                stash name: 'build-jar', includes: 'target/*.jar'   
             }
             }
         }
@@ -33,5 +36,3 @@ pipeline{
         }
    
     }
-     
-

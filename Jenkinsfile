@@ -8,6 +8,7 @@ pipeline{
             
             steps{
                 echo "**********RUNNING CODEQUALITY TEST***********"
+                sh 'rm -rf spring-petclinic'
                 sh "git clone https://github.com/chandupolina/spring-petclinic.git"
                 dir ('spring-petclinic'){
                 sh "mvn clean verify sonar:sonar \

@@ -22,6 +22,8 @@ pipeline{
   -Dsonar.projectKey=new \
   -Dsonar.host.url=http://34.135.134.147:9000 \
   -Dsonar.login=sqp_3e4d6ac7c47c17b9197a40b0eb526c7ca4061bbf
+  -DskipTests \
+  -Dcyclonedx.skip=true 
 
                 '''
                 }

@@ -10,13 +10,10 @@ pipeline{
             steps{
                 echo "**********RUNNING CODEQUALITY TEST***********"
                 dir ('spring-petclinic'){
-                sh '''
-                mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=new \
-  -Dsonar.host.url=http://34.135.134.147:9000 \
-  -Dsonar.login=sqp_3e4d6ac7c47c17b9197a40b0eb526c7ca4061bbf
-  -DskipTests 
-                '''
+                sh "mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=petclinic \
+                    -Dsonar.host.url='http://34.133.89.244:9000' \
+                    -Dsonar.login=sqp_102653f8646b59eedf7f0b7c0cd5185ebab12ee8"
                 }
             }
         }

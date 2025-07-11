@@ -9,8 +9,10 @@ pipeline{
             steps{
                 echo "**********RUNNING CODEQUALITY TEST***********"
                 sh 'rm -rf spring-petclinic'
+                
                 sh "git clone https://github.com/chandupolina/spring-petclinic.git"
                 dir ('spring-petclinic'){
+                sh 'rm Jenkinsfile'
                 sh "mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=petclinic \
                     -Dsonar.host.url='http://34.133.89.244:9000' \
